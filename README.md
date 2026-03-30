@@ -1,123 +1,181 @@
-# 🎬 VLC Media Player — Open Source Audit
+# VLC Media Player — Open Source Audit
 
-> An academic audit and analysis of VLC Media Player covering its origin, philosophy, licensing, Linux footprint, ecosystem, and comparison with proprietary alternatives.
-
----
-
-## 👤 Student Details
-
-| Field       | Details          |
-|-------------|------------------|
-| **Name**    | Tanish Saxena    |
-| **Roll No** | *24BAI10186*     |
-| **Course**  | Open Source Software |
+An academic audit and analysis of VLC Media Player covering its origin, philosophy, licensing, Linux footprint, ecosystem, and comparison with proprietary alternatives.
 
 ---
 
-## 🧾 Chosen Software
+## Student Details
 
-| Field            | Details                          |
-|------------------|----------------------------------|
-| **Software**     | VLC Media Player                 |
-| **License**      | GNU General Public License (GPL) |
-| **Organization** | VideoLAN Organization            |
-| **Website**      | https://www.videolan.org/vlc/    |
-
----
-
-## 📋 Project Description
-
-This project is an audit and analysis of **VLC Media Player**, one of the most widely used open-source media players in the world. The report covers:
-
-- 🌱 Origin and history of VLC
-- 💡 Open-source philosophy and FOSS ecosystem
-- 📄 Licensing under GNU GPL
-- 🐧 Linux footprint and installation
-- ⚖️ Comparison with proprietary alternatives (e.g., Windows Media Player, iTunes)
-
-Shell scripts are also included to install, verify, and launch VLC on a Linux (Ubuntu/Debian) system.
+| Field      | Details              |
+|------------|----------------------|
+| Name       | Tanish Saxena        |
+| Roll No    | 24BAI10186           |
+| Course     | Open Source Software |
 
 ---
 
-## 📁 Project Structure
+## About the Software
+
+| Field        | Details                          |
+|--------------|----------------------------------|
+| Software     | VLC Media Player                 |
+| License      | GNU General Public License (GPL) |
+| Organization | VideoLAN Organization            |
+| Website      | https://www.videolan.org/vlc/    |
+
+---
+
+## What This Project Is About
+
+This is an audit of **VLC Media Player**, one of the most popular and widely used open-source media players available today. The report looks at:
+
+- Where VLC came from and how it started
+- The open-source philosophy behind it and the FOSS ecosystem it belongs to
+- How GNU GPL licensing works in practice
+- VLC's presence and behavior on Linux systems
+- How it compares to proprietary alternatives like Windows Media Player
+
+Along with the report, this project includes shell scripts — three for working with VLC directly, and five more that demonstrate Linux scripting as part of the assignment.
+
+---
+
+## Project Structure
 
 ```
 VLC-Open-Source-Audit/
 │
-├── README.md           # Project overview and instructions
-├── install_vlc.sh      # Script to install VLC via apt
-├── run_vlc.sh          # Script to launch VLC
-├── check_vlc.sh        # Script to verify VLC installation
-└── report.pdf          # Full audit report
+├── README.md
+├── install_vlc.sh
+├── run_vlc.sh
+├── check_vlc.sh
+│
+├── script1.sh
+├── script2.sh
+├── script3.sh
+├── script4.sh
+├── script5.sh
+│
+└── report.pdf
 ```
 
 ---
 
-## 🔧 Scripts Overview
+## VLC Scripts
 
-### 1. `install_vlc.sh`
-Updates the package list and installs VLC Media Player using `apt`.
+### install_vlc.sh
+Updates the package list and installs VLC using `apt`.
 
-### 2. `run_vlc.sh`
-Launches VLC Media Player from the terminal.
+### run_vlc.sh
+Opens VLC Media Player.
 
-### 3. `check_vlc.sh`
-Checks and displays:
-- VLC version
-- Binary location (`which vlc`)
-- Running user (`whoami`)
+### check_vlc.sh
+Prints the installed VLC version, where the binary lives, and which user is running it.
 
 ---
 
-## 📦 Dependencies
+## Assignment Shell Scripts
 
-- Linux OS (Ubuntu / Debian recommended)
-- `apt` package manager
-- Active Internet connection
-- `git` *(optional, for cloning the repository)*
+### script1.sh — System Identity Report
+Prints basic system information: OS name, kernel version, current user, uptime, and license type.
+
+### script2.sh — FOSS Package Inspector
+Checks whether VLC (or any given package) is installed and displays relevant package info.
+
+### script3.sh — Disk and Permission Auditor
+Lists file permissions and sizes for key directories on the system.
+
+### script4.sh — Log File Analyzer
+Scans a log file for a given keyword, counts how many times it appears, and shows the most recent matches.
+
+### script5.sh — Open Source Manifesto Generator
+An interactive script that asks the user a few questions and writes a personalized manifesto to a text file.
 
 ---
 
-## 🚀 Steps to Run on Linux
+## How to Run
 
-### Step 1 — Clone the Repository
+### Step 1 — Navigate to the project folder
+
 ```bash
-git clone <your-repo-link>
 cd VLC-Open-Source-Audit
 ```
 
-### Step 2 — Grant Execute Permissions
+### Step 2 — Give all scripts execute permission
+
 ```bash
-chmod +x install_vlc.sh run_vlc.sh check_vlc.sh
+chmod +x *.sh
 ```
 
-### Step 3 — Install VLC
+---
+
+### Running the VLC scripts
+
+Install VLC:
 ```bash
 ./install_vlc.sh
 ```
 
-### Step 4 — Verify Installation
+Check that it installed correctly:
 ```bash
 ./check_vlc.sh
 ```
 
-### Step 5 — Launch VLC
+Open VLC:
 ```bash
 ./run_vlc.sh
 ```
 
 ---
 
-## ✅ Conclusion
+### Running the assignment scripts
 
-This project demonstrates the working, ecosystem, and advantages of **VLC Media Player** in the open-source world. VLC stands as a powerful example of how FOSS (Free and Open Source Software) can match and often exceed proprietary alternatives in functionality, accessibility, and community-driven development.
+```bash
+./script1.sh
+```
+
+```bash
+./script2.sh
+```
+
+```bash
+./script3.sh
+```
+
+For script4, pass a log file path and a keyword:
+```bash
+./script4.sh /var/log/syslog error
+```
+
+You can swap out the file path or keyword (e.g. `warning`, `failed`) depending on what you want to search for.
+
+For script5, just run it and follow the prompts:
+```bash
+./script5.sh
+```
+
+It will generate a file named something like `manifesto_username.txt` in the same directory.
 
 ---
 
-## 📄 License
+## A Few Things to Keep in Mind
 
-This project is submitted for academic purposes under the Open Source Software course. VLC itself is licensed under the [GNU General Public License v2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
+- These scripts are written for Ubuntu/Debian. Other distributions may need slight adjustments.
+- A couple of commands might need `sudo` depending on your system setup.
+- If a script refuses to run, you can also execute it directly with:
+
+```bash
+bash script_name.sh
+```
 
 ---
 
+## Conclusion
 
+This project brings together two things: a proper analysis of a real-world open-source application, and hands-on Linux scripting practice. VLC is a good example of how open-source software can be reliable, well-maintained, and freely available without any of the restrictions that come with proprietary tools. The shell scripts alongside it show how Linux can be used practically for automation and system inspection.
+
+---
+
+## License
+
+Submitted for academic purposes under the Open Source Software course.
+VLC Media Player is licensed under the GNU General Public License v2.0.
